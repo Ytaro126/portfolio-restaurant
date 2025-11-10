@@ -89,3 +89,32 @@ if(form) {
         form.reset();
     });
 }
+
+// ===============================
+// スクロールアニメーション
+// ===============================
+
+const animatedElements = document.querySelectorAll(".fade-in");
+
+if (animatedElements.length > 0) {
+    if("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach((entry) => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add("is-visible");
+                        obs.unobserve(entry.target); //一度アニメーションしたら監視を外す
+                    }
+                });
+            },
+            {
+                threshold: 0.2, //要素の20%が見えたら発火
+            }
+        );
+
+        animatedElements.forEach((el) => observer.observe(el));
+    }else{
+        //古いブラウザ用フォールバック:常に表示しておく
+        animatedElements.forEach((el) => el.classList.add("is-visible"));
+    }
+}
