@@ -1,0 +1,367 @@
+// ==============================
+// 基本設定
+// ==============================
+$color-bg: #050608;
+$color-surface: rgba(255, 255, 255, 0.04);
+$color-accent: #c9a86a;
+$color-text: #f8f4ec;
+$color-muted: #aaaaaa;
+
+$font-main: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+  "Yu Gothic", "Meiryo", sans-serif;
+$font-display: "Hiragino Mincho ProN", "Yu Mincho", serif;
+
+$max-width: 1040px;
+
+// ==============================
+// リセット & ベース
+// ==============================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-main;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// 共通レイアウト
+.section {
+  padding: 80px 20px;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $font-display;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: $color-accent;
+  }
+}
+
+// 共通ボタン
+.button,
+.header__btn,
+.hero__btn,
+.reserve__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: 1px solid $color-accent;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: $color-accent;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    background-color: $color-accent;
+    color: $color-bg;
+    opacity: 1;
+  }
+}
+
+// ==============================
+// HEADER
+// ==============================
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: rgba(5, 6, 8, 0.9);
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: 22px;
+    letter-spacing: 0.2em;
+
+    &--sub {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: $color-muted;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-link {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: $color-muted;
+
+      &:hover {
+        color: $color-text;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 12px;
+    padding-inline: 20px;
+  }
+}
+
+// ==============================
+// HERO
+// ==============================
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 60px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%),
+    radial-gradient(circle at bottom, rgba(201, 168, 106, 0.25), transparent 60%),
+    #050608;
+
+  // もしあとで写真を入れるならここを差し替え:
+  // background: url("../img/hero.jpg") center/cover no-repeat;
+  // &::before などで黒のグラデを重ねてもOK
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0) 0,
+      rgba(0, 0, 0, 0.7) 55%
+    );
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  &__subtitle {
+    color: $color-muted;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+
+  &__btn {
+    font-size: 13px;
+  }
+}
+
+// ==============================
+// CONCEPT
+// ==============================
+.concept {
+  &__text {
+    max-width: 640px;
+    font-size: 14px;
+    color: $color-muted;
+  }
+}
+
+// ==============================
+// MENU
+// ==============================
+.menu {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02),
+    transparent
+  );
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  &__item {
+    padding: 20px 20px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  &__name {
+    font-size: 16px;
+    margin: 0 0 4px;
+  }
+
+  &__price {
+    font-size: 14px;
+    color: $color-accent;
+    margin: 0 0 10px;
+  }
+
+  &__desc {
+    font-size: 13px;
+    color: $color-muted;
+    margin: 0;
+  }
+}
+
+// ==============================
+// ACCESS
+// ==============================
+.access {
+  &__info {
+    font-size: 13px;
+    color: $color-muted;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__map {
+    margin-top: 24px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+  }
+}
+
+// ==============================
+// RESERVE
+// ==============================
+.reserve {
+  background: radial-gradient(
+      circle at top,
+      rgba(201, 168, 106, 0.18),
+      transparent 55%
+    ),
+    #050608;
+
+  &__text {
+    font-size: 14px;
+    color: $color-muted;
+    margin-bottom: 18px;
+  }
+
+  &__btn {
+    margin-bottom: 10px;
+  }
+
+  &__tel {
+    font-family: $font-display;
+    letter-spacing: 0.16em;
+    font-size: 14px;
+  }
+}
+
+// ==============================
+// FOOTER
+// ==============================
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 18px 20px 26px;
+  text-align: center;
+  font-size: 11px;
+  color: $color-muted;
+}
+
+// ==============================
+// レスポンシブ
+// ==============================
+@media (max-width: 768px) {
+  .header__inner {
+    padding-inline: 16px;
+  }
+
+  .header__nav-list {
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 60vh;
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__subtitle {
+      font-size: 13px;
+    }
+  }
+
+  .section {
+    padding: 60px 16px;
+  }
+
+  .menu__list {
+    grid-template-columns: 1fr;
+  }
+}
