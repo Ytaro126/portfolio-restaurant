@@ -1,19 +1,114 @@
+
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和食 一縷(いちる)</title>
-    <meta name="description" content="西麻生の静寂と李を味わう、完全予約制の和食店">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>和食 一縷（いちる）</title>
+    <meta name="description" content="西麻布の静寂と季を味わう、完全予約制の和食店「一縷」。" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
-        <div class="header__inner">
-            <h1 class="header__logo">一縷<span class="header__logo--sub">ICHIRU</span></h1>
-        </div>
+      <div class="header__inner">
+        <h1 class="header__logo">一縷<span class="header__logo--sub">ICHIRU</span></h1>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li><a href="#concept" class="header__nav-link">Concept</a></li>
+            <li><a href="#menu" class="header__nav-link">Menu</a></li>
+            <li><a href="#access" class="header__nav-link">Access</a></li>
+          </ul>
+        </nav>
+        <a href="#reserve" class="header__btn">予約</a>
+      </div>
     </header>
-</body>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h2 class="hero__title">静寂の中に、香り立つひと皿を。</h2>
+        <p class="hero__subtitle">季の恵みを、ひとつひとつ丁寧に。</p>
+        <a href="#reserve" class="hero__btn">ご予約はこちら</a>
+      </div>
+    </section>
+
+    <!-- ================= CONCEPT ================= -->
+    <section id="concept" class="concept section">
+      <div class="section__inner">
+        <h2 class="section__title">Concept</h2>
+        <p class="concept__text">
+          西麻布の静かな路地に佇む「一縷」。<br />
+          旬の素材に寄り添い、火入れと香りで季節を描きます。<br />
+          8席のみの空間で、心に残る時間をお過ごしください。
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= MENU ================= -->
+    <section id="menu" class="menu section">
+      <div class="section__inner">
+        <h2 class="section__title">Course</h2>
+
+        <div class="menu__list">
+          <article class="menu__item">
+            <h3 class="menu__name">旬彩コース</h3>
+            <p class="menu__price">¥12,000（税込）</p>
+            <p class="menu__desc">
+              季節の前菜から始まり、魚・肉・甘味まで全7品のコース。
+            </p>
+          </article>
+
+          <article class="menu__item">
+            <h3 class="menu__name">特選コース</h3>
+            <p class="menu__price">¥18,000（税込）</p>
+            <p class="menu__desc">
+              厳選素材を使用した、料理長おまかせの特別コース。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACCESS ================= -->
+    <section id="access" class="access section">
+      <div class="section__inner">
+        <h2 class="section__title">Access</h2>
+        <p class="access__info">
+          〒106-0031 東京都港区西麻布3丁目◯◯−◯◯  
+          <br />東京メトロ日比谷線 六本木駅 1C出口 徒歩3分
+        </p>
+        <p class="access__info">
+          営業時間：18:00〜22:00（L.O.21:00）<br />
+          定休日：月曜日
+        </p>
+        <div class="access__map">
+          <img src="img/map-sample.jpg" alt="店舗地図" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESERVE ================= -->
+    <section id="reserve" class="reserve section">
+      <div class="section__inner">
+        <h2 class="section__title">Reservation</h2>
+        <p class="reserve__text">
+          ご予約はお電話またはオンラインにて承ります。
+        </p>
+        <a href="#" class="reserve__btn">オンライン予約</a>
+        <p class="reserve__tel">TEL：03-XXXX-XXXX</p>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <p class="footer__copy">
+        © 2025 Ichiru. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
