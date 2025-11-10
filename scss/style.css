@@ -266,4 +266,11 @@ a:hover {
   .menu__list {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 480px) {
+  .header__inner {
+    padding-inline: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }/*# sourceMappingURL=style.css.map */
