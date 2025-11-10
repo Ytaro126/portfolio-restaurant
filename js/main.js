@@ -1,19 +1,25 @@
-console.log("JSは読み込まれている")
+// ===============================
+// スムーズスクロール
+// ===============================
 
+// ページ内リンクを全部取得
 const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach((link) =>{
     link.addEventListener('click', (e) => {
+        // aタグ本来の動作（瞬間移動）を止める
         e.preventDefault();
 
+        // 移動先の要素を取得
         const targetId = link.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if(targetElement){
-            
+            // スクロール位置を計算
             const rect = targetElement.getBoundingClientRect();
             const offset = window.pageY0ffset + rect.top - 80;
 
+            // スムーズにスクロール
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth',
@@ -22,6 +28,9 @@ links.forEach((link) =>{
     });
 });
 
+// ===============================
+// スクロールでヘッダーを縮める
+// ===============================
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
