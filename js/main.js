@@ -63,3 +63,29 @@ if(openBtn && modal) {
         });
     });
 }
+
+//フォーム送信処理
+const form = modal.querySelector(".modal__form");
+
+if(form) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); //ページ遷移を止める
+
+        const name = form.elements["name"].value;
+        const date = form.elements["date"].value;
+        const people = form.elements["people"].value;
+
+        //仮の処理:アラート+コンソール出力
+        alert(`【仮予約】\n${name} 様\n${date} / ${people} 名様で承りました。` );
+
+        console.log({
+            name,
+            date,
+            people,
+        });
+
+        //モーダルを閉じてフォームリセット
+        modal.classList.remove("is-active");
+        form.reset();
+    });
+}
