@@ -114,10 +114,37 @@
         <div class="modal__content">
             <button class="modal__close">&times;</button>
             <h2 class="modal__title">ご予約</h2>
-            <p class="modal__text">ご予約はお電話またはオンラインにて承ります。</p>
-            <a href="#" class="modal__btn">オンライン予約サイトへ</a>
-            <p class="modal__tel">TEL:03-XXXX-XXXX</p>
+            <p class="modal__text">必要事項をご入力のうえ、送信してください。</p>
+
+            <form class="modal__form">
+                <div class="modal__field">
+                <label for="name" class="modal__label">お名前</label>
+                <input id="name" name="name" type="text" class="modal__input" required />
+                </div>
+
+                <div class="modal__field">
+                <label for="date" class="modal__label">ご来店日</label>
+                <input id="date" name="date" type="date" class="modal__input" required />
+                </div>
+
+                <div class="modal__field">
+                <label for="people" class="modal__label">人数</label>
+                <input
+                    id="people"
+                    name="people"
+                    type="number"
+                    min="1"
+                    max="8"
+                    class="modal__input"
+                    required
+                />
         </div>
+
+    <button type="submit" class="modal__btn">この内容で送信</button>
+  </form>
+
+  <p class="modal__tel">お急ぎの際は TEL：03-XXXX-XXXX まで</p>
+</div>
     </div>
     <script src="js/main.js"></script>
   </body>

@@ -351,6 +351,34 @@ a:hover {
   background: #c9a86a;
   color: #050608;
 }
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.modal__field {
+  text-align: left;
+}
+.modal__label {
+  display: block;
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 4px;
+}
+.modal__input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.4);
+  color: #f8f4ec;
+  font-size: 13px;
+}
+.modal__input:focus {
+  outline: none;
+  border-color: #c9a86a;
+}
 .modal__tel {
   color: #aaaaaa;
   font-size: 13px;

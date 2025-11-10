@@ -462,7 +462,39 @@ a {
       color: $color-bg;
     }
   }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
 
+  &__field {
+    text-align: left;
+  }
+
+  &__label {
+    display: block;
+    font-size: 12px;
+    color: $color-muted;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.4);
+    color: $color-text;
+    font-size: 13px;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+  
   &__tel {
     color: $color-muted;
     font-size: 13px;
