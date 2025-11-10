@@ -382,26 +382,28 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
 // ==============================
-// MODAL
+// MODAL（フェード付き）
 // ==============================
 .modal {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
   backdrop-filter: blur(4px);
-
-  &.is-active {
-    display: flex;
-  }
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 
   &__overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   &__content {
@@ -414,6 +416,23 @@ a {
     width: 90%;
     max-width: 360px;
     text-align: center;
+    transform: translateY(-20px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+
+    .modal__overlay {
+      opacity: 1;
+    }
+
+    .modal__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &__title {

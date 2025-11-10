@@ -285,20 +285,22 @@ a:hover {
 .modal {
   position: fixed;
   inset: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-}
-.modal.is-active {
-  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 .modal__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 .modal__content {
   position: relative;
@@ -310,6 +312,20 @@ a:hover {
   width: 90%;
   max-width: 360px;
   text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.modal.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal.is-active .modal__overlay {
+  opacity: 1;
+}
+.modal.is-active .modal__content {
+  transform: translateY(0);
+  opacity: 1;
 }
 .modal__title {
   color: #c9a86a;
