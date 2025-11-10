@@ -125,6 +125,21 @@ a:hover {
   padding-inline: 20px;
 }
 
+.header--scrolled {
+  background: rgba(5, 6, 8, 0.98);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.header--scrolled .header__inner {
+  padding: 8px 20px;
+  transition: padding 0.3s ease;
+}
+.header--scrolled .header__logo {
+  font-size: 18px;
+  transition: font-size 0.3s ease;
+}
+
 .hero {
   position: relative;
   min-height: 70vh;
