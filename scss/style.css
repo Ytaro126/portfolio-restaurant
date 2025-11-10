@@ -281,4 +281,75 @@ a:hover {
   .menu__list {
     grid-template-columns: 1fr;
   }
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+.modal.is-active {
+  display: flex;
+}
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal__content {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+}
+.modal__title {
+  color: #c9a86a;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.modal__text {
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.modal__btn {
+  display: inline-block;
+  border: 1px solid #c9a86a;
+  color: #c9a86a;
+  padding: 8px 20px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  transition: 0.2s ease;
+}
+.modal__btn:hover {
+  background: #c9a86a;
+  color: #050608;
+}
+.modal__tel {
+  color: #aaaaaa;
+  font-size: 13px;
+}
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #aaaaaa;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal__close:hover {
+  color: #c9a86a;
 }/*# sourceMappingURL=style.css.map */

@@ -31,3 +31,26 @@ window.addEventListener('scroll', () => {
         header.classList.remove('header--scrolled');
     }
 });
+
+// ===============================
+// 予約モーダル 開閉処理
+// ===============================
+const modal = document.querySelector("#reserveModal");
+const openBtn = document.querySelector(".header__btn");
+const closeBtn = modal.querySelector(".modal__close");
+const overlay = modal.querySelector(".modal__overlay");
+
+if(openBtn && modal) {
+    //開く
+    openBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.classList.add("is-active");
+    });
+
+    //閉じる（×ボタン or 背景クリック）
+    [closeBtn, overlay].forEach((el) => {
+        el.addEventListener("click", () => {
+            modal.classList.remove("is-active");
+        });
+    });
+}
